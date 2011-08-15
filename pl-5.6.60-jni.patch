@@ -1,0 +1,23 @@
+diff -up pl-5.6.60/packages/jpl/jpl.pl.jni pl-5.6.60/packages/jpl/jpl.pl
+--- pl-5.6.60/packages/jpl/jpl.pl.jni	2008-09-15 09:34:38.000000000 -0400
++++ pl-5.6.60/packages/jpl/jpl.pl	2008-09-19 10:25:37.000000000 -0400
+@@ -4390,7 +4390,8 @@ prolog:error_message(java_exception(Ex))
+ :- multifile user:file_search_path/2.
+ :- dynamic   user:file_search_path/2.
+ 
+-user:file_search_path(jar, swi(lib)).
++user:file_search_path(jar, 'LIBDIR/pl-jpl').
++user:file_search_path(jni, 'LIBDIR/pl-jpl').
+ 
+ %%	add_search_path(+Var, +Value) is det.
+ %
+@@ -4534,7 +4535,7 @@ add_jpl_to_classpath :-
+ 
+ libjpl(File) :-
+ 	(   current_prolog_flag(unix, true)
+-	->  File = foreign(libjpl)
++	->  File = jni(libjpl)
+ 	;   File = foreign(jpl)
+ 	).
+ 
+diff -up pl-5.6.60/packages/jpl/src/java/jpl/fli/Prolog.java.jni pl-5.6.60/packages/jpl/src/java/jpl/fli/Prolog.java

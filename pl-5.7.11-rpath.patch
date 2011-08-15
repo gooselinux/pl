@@ -1,0 +1,23 @@
+--- pl-5.7.11/packages/xpce/pl/src/Makefile.orig	2009-07-06 10:30:39.522810119 +0100
++++ pl-5.7.11/packages/xpce/pl/src/Makefile	2009-07-06 10:30:52.766810939 +0100
+@@ -114,20 +114,8 @@
+ 		fi
+ 
+ sopce$(XPCESO):
+-		if [ "x$$LD_RUN_PATH" = "x" ]; then \
+-		    LD_RUN_PATH="$(libdir)"; \
+-		else \
+-		    LD_RUN_PATH="$(libdir):$$LD_RUN_PATH"; \
+-		fi; \
+-		export LD_RUN_PATH; \
+ 		$(PLLD) -shared $(SOITF) $(LDFLAGS) -L$(XLIB) -L$(LIBDIR) -lXPCE -o $(XPCESO);
+ axpce$(XPCESO):
+-		if [ "x$$LD_RUN_PATH" = "x" ]; then \
+-		    LD_RUN_PATH="$(libdir)"; \
+-		else \
+-		    LD_RUN_PATH="$(libdir):$$LD_RUN_PATH"; \
+-		fi; \
+-		export LD_RUN_PATH; \
+ 		$(PLLD) -shared $(LDFLAGS) $(SOITF) $(SOEXTR) -L$(LIBDIR) \
+ 		-lXPCE $(GCCLIB) -L$(XLIB) $(XLIBS) $(NETLIBS) -o $(XPCESO);
+ 

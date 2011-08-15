@@ -1,0 +1,70 @@
+--- pl-5.7.11/src/pl.1.in.orig	2009-07-06 11:38:55.194810616 +0100
++++ pl-5.7.11/src/pl.1.in	2009-07-06 11:39:53.213766888 +0100
+@@ -333,57 +333,6 @@
+ .BR apropos/1
+ and
+ .BR explain/1.
+-.RE
+-.SH FILES
+-This installation of SWI-Prolog has been configured using the configure
+-option
+-.BI \-\-prefix= @prefix@.
+-If the files listed below are not at the indicated place, the installation
+-has probably been moved.  Use
+-.TP
+-?- current_prolog_flag(home, Home).
+-.P
+-to find the local installation directory of SWI-Prolog.
+-.TP
+-.I .plrc
+-.TP
+-.I ~/.plrc
+-Personal initialisation files consulted by SWI-Prolog on startup.
+-If both exist
+-.I .plrc
+-is used.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/bin/@ARCH@/
+-Location for the executables.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/include/
+-Location for the include files.  If writable, SWI-Prolog.h is also
+-copied to @prefix@/include/SWI-Prolog.h.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/library/
+-SWI-Prolog user libraries.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/boot/
+-SWI-Prolog kernel parts written in Prolog.  The startup file
+-@prefix@/lib/@PL@-@PLVERSION@/boot32.prc may be recreated using
+-the command from the directory @prefix@/lib/@PL@-@PLVERSION@:
+-.RS
+-.TP
+-bin/@ARCH@/@PL@ -O -o boot32.prc -b boot/init.pl
+-.RE
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/doc/packages
+-HTML and/or PDF documentation on the installed add-ons.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/boot32.prc
+-Default startup file.  This is a `intermediate code' file containing
+-precompiled code from the boot directory.  The
+-.BI \-x bootfile
+-option may be used to select a different file.
+-.TP
+-.I @prefix@/lib/@PL@-@PLVERSION@/runtime/@ARCH@/libpl.a
+-SWI-Prolog library for embedding.  See also
+-.I plld(1).
+ .SH SEE ALSO
+ .PP
+ The SWI-Prolog web-home at
+@@ -393,9 +342,6 @@
+ .IR "SWI-Prolog Reference Manual" at
+ .I http://gollem.science.uva.nl/SWI-Prolog/Manual/
+ .PP
+-Documentation on the add-on packages in
+-.I @prefix@/lib/@PL@-@PLVERSION@/boot/doc
+-.PP
+ William\ F.\ Clocksin & Christopher\ S.\ Mellish,
+ .IR "Programming in Prolog" ,
+ fourth edition, Springer Verlag, Berlin 1994.

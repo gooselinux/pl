@@ -1,0 +1,12 @@
+diff -up pl-5.7.11/src/pl.pc.in.pc pl-5.7.11/src/pl.pc.in
+--- pl-5.7.11/src/pl.pc.in.pc	2009-08-14 18:00:33.000000000 +0200
++++ pl-5.7.11/src/pl.pc.in	2009-08-14 18:01:03.000000000 +0200
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+-includedir=@includedir@
++includedir=${libdir}/@PL@-@PLVERSION@/include
+ 
+ PLBASE=${libdir}/@PL@-@PLVERSION@
+ PLARCH=@ARCH@
